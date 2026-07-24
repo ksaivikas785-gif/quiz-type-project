@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Know-It-All — General Knowledge Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="chalk-dust"></div>
+
+  <header class="marquee">
+    <div class="marquee-inner">
+      <span class="eyebrow">Round 1 · General Knowledge</span>
+      <h1>KNOW-IT-ALL</h1>
+    </div>
+    <div class="scoreboard" aria-live="polite">
+      <div class="score-panel">
+        <span class="score-label">Score</span>
+        <div class="flip-digits" id="scoreDigits">
+          <span class="flip-digit">0</span><span class="flip-digit">0</span>
+        </div>
+      </div>
+      <div class="score-panel">
+        <span class="score-label">Question</span>
+        <div class="flip-digits" id="questionDigits">
+          <span class="flip-digit">0</span><span class="flip-digit">1</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="startScreen" class="screen active">
+      <div class="podium-card">
+        <p class="podium-kicker">18 questions · no clock · pure knowledge</p>
+        <h2>Step up to the podium.</h2>
+        <p class="podium-copy">History, science, geography, art and a little bit of everything else. Answer as many as you can — your final tally lands on the scoreboard at the end.</p>
+        <button class="buzzer" id="startBtn">
+          <span>Start the Round</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="quizScreen" class="screen">
+      <div class="track">
+        <div class="track-fill" id="trackFill"></div>
+      </div>
+
+      <div class="question-card">
+        <p class="category-tag" id="categoryTag">Category</p>
+        <h2 class="question-text" id="questionText">Question text goes here</h2>
+
+        <div class="options" id="optionsGrid"></div>
+
+        <div class="feedback" id="feedback" aria-live="polite"></div>
+
+        <button class="buzzer next-btn" id="nextBtn" disabled>
+          <span id="nextBtnLabel">Next Question</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="resultsScreen" class="screen">
+      <div class="podium-card results-card">
+        <p class="podium-kicker" id="resultsKicker">Final Tally</p>
+        <h2 id="resultsTitle">Nicely played.</h2>
+        <div class="big-score">
+          <span id="finalScore">0</span><span class="big-score-of">/18</span>
+        </div>
+        <p class="podium-copy" id="resultsCopy"></p>
+        <button class="buzzer" id="retryBtn">
+          <span>Play Again</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with plain HTML, CSS &amp; JS — no frameworks, no build step.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
